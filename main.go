@@ -1,14 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 	// Booleans
-	myName := "Micah"
+	myName := "Micah Rowell\n"
 
-	fmt.Println("What is your first name?")
-	var userName string
-	fmt.Scanln(&userName)
+	fmt.Println("What is your first and last name?")
+
+	reader := bufio.NewReader(os.Stdin)
+	userName, _ := reader.ReadString('\n')
 
 	// If/Else Statements
 	if userName == myName {
